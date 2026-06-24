@@ -43,7 +43,7 @@ export const Contact: React.FC<ContactProps> = ({ onCopyEmail }) => {
           <p className="text-xs font-bold text-text-tertiary tracking-widest font-quicksand mb-3">寻找实习或全职机会</p>
           <div className="flex flex-wrap gap-2 justify-center">
             {jobTags.map((tag, i) => {
-              const cm = colorMap[tag.color];
+              const cm = colorMap[tag.color as keyof typeof colorMap];
               return (
                 <span key={tag._key ?? i} className={`text-xs font-semibold px-3 py-1.5 rounded-full border ${cm.tagStyle} font-quicksand`}>
                   {tag.label}

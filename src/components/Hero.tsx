@@ -99,7 +99,7 @@ export const Hero: React.FC = () => {
           className="flex flex-wrap justify-center gap-2 mb-10"
         >
           {heroTags.map((tag, i) => {
-            const cm = colorMap[tag.color];
+            const cm = colorMap[tag.color as keyof typeof colorMap];
             return (
               <span key={tag._key ?? i} className={`text-xs font-semibold px-3 py-1.5 rounded-full border ${cm.tagStyle} font-quicksand`}>
                 {tag.label}
