@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Backgrounds */
+  --bg: #FAF8F5;
+  --surface: #FFFFFF;
+  --surface-alt: #F5EFE6;
+  --surface-hover: #FFFDFB;
+
+  /* Borders */
+  --border: #EFEAE2;
+  --border-hover: #DCD5CB;
+  --border-warm-brown: rgba(74, 62, 61, 0.15);
+
+  /* Text */
+  --text: #4A3E3D;
+  --text-secondary: #8A7E7D;
+  --text-tertiary: #B5A9A8;
+
+  /* Accent */
+  --accent-pink: #FFC5D9;
+  --accent-purple: #D6B4FC;
+  --accent-pink-hover: #FFAEC4;
+  --accent-purple-hover: #C296FA;
+
+  /* Chiikawa Palette */
+  --chiikawa-pink: #FFD5E5;
+  --hachiware-blue: #D2EBF7;
+  --usagi-yellow: #FFF1C5;
+  --momonga-purple: #E8DDF2;
+
+  --chiikawa-pink-dark: #853D55;
+  --hachiware-blue-dark: #2B5E75;
+  --usagi-yellow-dark: #7A5F13;
+  --momonga-purple-dark: #63437A;
+
+  /* RGB variants for rgba() */
+  --bg-rgb: 250, 248, 245;
+  --text-rgb: 74, 62, 61;
+  --accent-pink-rgb: 255, 197, 217;
+  --accent-purple-rgb: 214, 180, 252;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Noto Sans SC', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-hover);
+}
+
+/* Custom Healing Styles */
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-pink) 0%, var(--accent-purple) 100%);
+  color: var(--text);
+  font-weight: 600;
+  border-radius: 9999px;
+  padding: 0.75rem 2rem;
+  border: 2px solid var(--text);
+  box-shadow: 3px 3px 0px 0px var(--text);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 5px 5px 0px 0px var(--text);
+}
+.btn-primary:active {
+  transform: translateY(1px);
+  box-shadow: 2px 2px 0px 0px var(--text);
+}
+
+.btn-secondary {
+  background: var(--surface);
+  color: var(--text);
+  border: 2px solid var(--text);
+  font-weight: 600;
+  border-radius: 9999px;
+  padding: 0.75rem 2rem;
+  box-shadow: 3px 3px 0px 0px rgba(74, 62, 61, 0.15);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  background: var(--hachiware-blue);
+  box-shadow: 5px 5px 0px 0px rgba(74, 62, 61, 0.25);
+}
+.btn-secondary:active {
+  transform: translateY(1px);
+  box-shadow: 2px 2px 0px 0px rgba(74, 62, 61, 0.15);
+}
+
+.card-healing {
+  background: var(--surface);
+  border: 2px solid var(--border-warm-brown);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.card-healing:hover {
+  transform: translateY(-6px);
+  border-color: var(--text);
+}
+
+.navbar-blur {
+  background: rgba(250, 248, 245, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(239, 234, 226, 0.5);
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-delay: 0s !important;
+    animation-duration: 0s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0s !important;
+    scroll-behavior: auto !important;
+    transform: none !important;
+  }
+}
